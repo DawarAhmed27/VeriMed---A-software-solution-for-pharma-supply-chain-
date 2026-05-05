@@ -1,0 +1,114 @@
+/* Shared responsive utilities */
+:root {
+  /* fallback if variables aren't present */
+  --container-max: 1126px;
+  --page-padding: 16px;
+  --bp-sm: 480px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+}
+
+/* Centered page container */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--page-padding);
+  padding-right: var(--page-padding);
+  box-sizing: border-box;
+}
+
+/* Utility flex/grid helpers */
+.row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.col {
+  flex: 1 1 0;
+  min-width: 0;
+}
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Responsive grid helper - uses auto-fit */
+.grid-responsive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+/* Common breakpoint helpers */
+@media (max-width: 768px) {
+  .hide-sm { display: none !important; }
+  .stack-sm { flex-direction: column !important; }
+}
+
+@media (max-width: 480px) {
+  .container { padding-left: 12px; padding-right: 12px; }
+  .hide-xs { display: none !important; }
+}
+
+/* Utility widths */
+.w-full { width: 100%; }
+.max-w-md { max-width: 720px; }
+
+/* Small helpers for images and buttons */
+.btn-responsive { padding: 10px 14px; font-size: 1rem; }
+img.responsive { max-width: 100%; height: auto; display: block; }
+
+/* Navbar responsiveness */
+.web-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+}
+
+.web-navbar .nav-links {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .web-navbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .web-navbar .nav-links {
+    justify-content: center;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .nav-logo h2 { font-size: 1.1rem; }
+}
+
+/* Login screen centering inside container */
+.login-screen .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 40px);
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/* Tweak logout button spacing on small screens */
+.logout-btn {
+  margin-left: 8px;
+}
+
+@media (max-width: 480px) {
+  .nav-links a, .nav-links button { font-size: 0.95rem; padding: 8px 10px; }
+  .login-card { padding: 18px; }
+}

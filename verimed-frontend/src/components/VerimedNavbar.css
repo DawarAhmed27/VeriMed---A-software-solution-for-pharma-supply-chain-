@@ -1,0 +1,159 @@
+/* VerimedNavbar.css — shared across all pages */
+.vm-nav {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  width: 100%;
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 62px;
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.18);
+  gap: 24px;
+}
+
+/* Brand */
+.vm-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.vm-brand-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: url('../assets/logo.png') center / contain no-repeat,
+              linear-gradient(135deg, #3b82f6, #1d4ed8);
+  background-size: contain, cover;
+  display: block;
+  flex-shrink: 0;
+}
+.vm-brand-name {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.vm-brand-sub {
+  color: #93c5fd;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+/* Nav links */
+.vm-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.vm-nav-link {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #93c5fd;
+  text-decoration: none;
+  padding: 7px 13px;
+  border-radius: 8px;
+  transition: background 0.18s, color 0.18s;
+  white-space: nowrap;
+}
+.vm-nav-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+.vm-nav-link.active {
+  background: rgba(59, 130, 246, 0.18);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Login button */
+.vm-login-btn {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--vm-navy-900);
+  text-decoration: none;
+  background: var(--vm-surface);
+  padding: 8px 18px;
+  border-radius: 8px;
+  margin-left: 6px;
+  transition: background 0.18s, box-shadow 0.18s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.vm-login-btn:hover {
+  background: #e0f2fe;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Logout button override */
+.vm-logout-btn {
+  font-size: 13px !important;
+  padding: 8px 16px !important;
+  margin-left: 6px;
+  border-radius: 8px !important;
+  background: rgba(255,255,255,0.1) !important;
+  border: 1px solid rgba(255,255,255,0.15) !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  backdrop-filter: none !important;
+}
+.vm-logout-btn:hover {
+  background: rgba(255,255,255,0.18) !important;
+  transform: none !important;
+}
+
+/* Hamburger (mobile) */
+.vm-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+.vm-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #93c5fd;
+  border-radius: 2px;
+}
+
+/* Mobile menu */
+.vm-mobile-menu {
+  display: none;
+  position: absolute;
+  top: 62px;
+  left: 0;
+  right: 0;
+  background: #0f172a;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  flex-direction: column;
+  padding: 12px 20px 20px;
+  gap: 4px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+.vm-mobile-menu a {
+  color: #93c5fd;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+@media (max-width: 820px) {
+  .vm-links { display: none; }
+  .vm-hamburger { display: flex; }
+  .vm-mobile-menu { display: flex; }
+  .vm-nav { padding: 0 20px; position: relative; }
+}

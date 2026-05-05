@@ -1,0 +1,199 @@
+/* FakeReports.css — mirrors Partners.css, red palette */
+
+/* ── Screen ── */
+.fr-screen { min-height: 100vh; background: var(--vm-bg); display: flex; flex-direction: column; }
+
+/* ── Hero (mirrors .partners-hero, red gradient) ── */
+.fr-hero {
+  background: linear-gradient(135deg, #3b0000 0%, #7f1d1d 50%, #b91c1c 100%);
+  padding: 56px 60px;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 40px; flex-wrap: wrap;
+}
+.fr-hero-content { max-width: 540px; }
+
+.fr-badge {
+  display: inline-block;
+  background: rgba(252, 165, 165, 0.2);
+  color: #fca5a5;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+  padding: 5px 14px; border-radius: 20px; margin-bottom: 16px;
+  border: 1px solid rgba(252, 165, 165, 0.3);
+}
+.fr-hero h1 { font-size: 34px; font-weight: 800; color: white; margin-bottom: 14px; line-height: 1.15; }
+.fr-hero p  { font-size: 15px; color: #fca5a5; line-height: 1.7; }
+
+.fr-hero-stats { display: flex; gap: 32px; }
+.fr-hero-stat  { text-align: center; }
+.fr-hero-stat span  { display: block; font-size: 32px; font-weight: 800; color: white; }
+.fr-hero-stat label { font-size: 11px; color: #fca5a5; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+
+/* ── Body (mirrors .partners-body) ── */
+.fr-body { max-width: 1200px; margin: 0 auto; padding: 36px 24px 60px; width: 100%; }
+
+/* ── Filter bar (mirrors .partners-filter-bar) ── */
+.fr-filter-bar {
+  display: flex; gap: 16px; align-items: center;
+  margin-bottom: 28px; flex-wrap: wrap;
+}
+.fr-search {
+  flex: 1; min-width: 220px; padding: 11px 15px;
+  border: 1.5px solid var(--vm-border); border-radius: var(--vm-radius-sm);
+  font-size: 13px; outline: none; background: var(--vm-surface); font-family: inherit;
+  transition: border-color 0.2s;
+}
+.fr-search:focus { border-color: #dc2626; box-shadow: 0 0 0 3px rgba(220,38,38,0.1); }
+
+.fr-chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.fr-chip {
+  padding: 8px 18px; border: 1.5px solid var(--vm-border); border-radius: 20px;
+  background: var(--vm-surface); font-size: 13px; font-weight: 600;
+  cursor: pointer; color: var(--vm-muted); transition: all 0.15s;
+}
+.fr-chip:hover  { border-color: #dc2626; color: #dc2626; }
+.fr-chip.active { background: #dc2626; color: white; border-color: #dc2626; }
+
+/* ── Loading / Empty ── */
+.fr-loading { text-align: center; padding: 60px 0; }
+.fr-spinner {
+  width: 36px; height: 36px;
+  border: 3px solid #fee2e2; border-top-color: #dc2626;
+  border-radius: 50%; animation: frspin 0.9s linear infinite; margin: 0 auto 12px;
+}
+@keyframes frspin { to { transform: rotate(360deg); } }
+.fr-loading p { color: var(--vm-muted); font-size: 14px; }
+
+.fr-empty { text-align: center; padding: 60px 0; }
+.fr-empty-avatar {
+  width: 72px; height: 72px; border-radius: 18px; margin: 0 auto 18px;
+  background: #dcfce7; color: #16a34a; font-size: 36px;
+  display: grid; place-items: center; font-weight: 800;
+}
+.fr-empty h3 { font-size: 18px; font-weight: 700; color: var(--vm-navy-900); margin-bottom: 8px; }
+.fr-empty p  { color: var(--vm-muted); font-size: 14px; }
+
+/* ── Grid (mirrors .partners-grid) ── */
+.fr-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 18px; margin-bottom: 44px;
+}
+
+/* ── Card (mirrors .partner-card) ── */
+.fr-card {
+  background: var(--vm-surface); border-radius: var(--vm-radius-lg); padding: 22px;
+  border: 1px solid var(--vm-border); border-left: 4px solid transparent;
+  box-shadow: var(--vm-shadow-sm);
+  display: flex; flex-direction: column; gap: 14px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.fr-card:hover { transform: translateY(-3px); box-shadow: var(--vm-shadow-lg); }
+.fr-card.bl     { border-left-color: #dc2626; background: linear-gradient(135deg, #fff5f5 0%, var(--vm-surface) 60%); }
+.fr-card.review { border-left-color: #f59e0b; }
+
+/* ── Card header (mirrors .pc-header) ── */
+.fr-card-header { display: flex; gap: 14px; align-items: flex-start; }
+
+/* ── Avatar (mirrors .pc-logo emoji circle) ── */
+.fr-avatar {
+  width: 54px; height: 54px; border-radius: 14px; flex-shrink: 0;
+  display: grid; place-items: center;
+  font-size: 26px; line-height: 1;
+}
+.fr-avatar.bl     { background: linear-gradient(135deg, #fff1f2, #fecdd3); border: 1px solid #fecaca; }
+.fr-avatar.review { background: linear-gradient(135deg, #fffbeb, #fef3c7); border: 1px solid #fde68a; }
+
+/* ── Card title (mirrors .pc-title) ── */
+.fr-card-title { flex: 1; }
+.fr-card-title h3 {
+  font-size: 15px; font-weight: 700; color: var(--vm-navy-900);
+  margin-bottom: 6px; line-height: 1.3;
+}
+.fr-card-meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+
+.fr-status-mark {
+  font-size: 10px; font-weight: 800; letter-spacing: 0.08em;
+  padding: 2px 8px; border-radius: 10px;
+}
+.fr-status-mark.bl     { background: #fee2e2; color: #dc2626; border: 1px solid #fecaca; }
+.fr-status-mark.review { background: #fef3c7; color: #d97706; border: 1px solid #fde68a; }
+
+.fr-batch-chip {
+  font-size: 10px; font-weight: 600; padding: 2px 8px;
+  border-radius: 10px; background: var(--vm-bg);
+  border: 1px solid var(--vm-border); color: var(--vm-muted);
+  font-family: monospace; letter-spacing: 0.04em;
+}
+
+/* ── Description (mirrors .pc-desc) ── */
+.fr-card-desc {
+  font-size: 13px; color: var(--vm-muted); line-height: 1.6; margin: 0;
+  font-style: italic; border-left: 3px solid var(--vm-border); padding-left: 11px;
+}
+
+/* ── Tags (mirrors .pc-brands area) ── */
+.fr-card-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.fr-tag {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 11px; padding: 3px 10px; border-radius: 20px;
+  background: var(--vm-bg); color: var(--vm-muted);
+  border: 1px solid var(--vm-border);
+}
+.fr-tag.reporter { background: #fef2f2; color: #dc2626; border-color: #fecaca; }
+.fr-tag.time     { background: #f0fdf4; color: #16a34a; border-color: #bbf7d0; }
+
+/* ── Card footer (mirrors .pc-footer) ── */
+.fr-card-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: auto; padding-top: 10px; border-top: 1px solid var(--vm-border);
+}
+.fr-card-date  { font-size: 12px; color: var(--vm-subtle); }
+.fr-report-link {
+  font-size: 13px; font-weight: 700; color: #dc2626;
+  text-decoration: none; transition: color 0.18s;
+}
+.fr-report-link:hover { text-decoration: underline; }
+
+/* ── CTA (mirrors .partners-join-cta, red) ── */
+.fr-cta {
+  background: linear-gradient(135deg, #3b0000, #7f1d1d);
+  border-radius: var(--vm-radius-xl); padding: 44px 40px;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 24px; flex-wrap: wrap; margin-bottom: 24px;
+}
+.fr-cta-content h2 { font-size: 22px; font-weight: 800; color: white; margin-bottom: 6px; }
+.fr-cta-content p  { font-size: 14px; color: #fca5a5; }
+.fr-cta-btn {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white; text-decoration: none; padding: 13px 26px;
+  border-radius: var(--vm-radius-sm); font-weight: 700; font-size: 14px;
+  white-space: nowrap; box-shadow: 0 4px 14px rgba(220,38,38,0.4);
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+.fr-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(220,38,38,0.5); }
+
+/* ── Safety tip ── */
+.fr-tip-box {
+  background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: var(--vm-radius);
+  padding: 16px 20px; font-size: 13px; color: #166534; line-height: 1.7;
+}
+.fr-tip-box a { color: #15803d; font-weight: 600; text-decoration: underline; }
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+  .fr-hero { padding: 36px 20px; flex-direction: column; }
+  .fr-hero-stats { gap: 20px; }
+  .fr-hero h1 { font-size: 24px; }
+  .fr-cta { flex-direction: column; text-align: center; padding: 28px 20px; }
+}
+
+/* ── Leaflet Dark Mode Trick ── */
+html.dark-theme .leaflet-layer,
+html.dark-theme .leaflet-control-zoom-in,
+html.dark-theme .leaflet-control-zoom-out,
+html.dark-theme .leaflet-control-attribution {
+  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}
+html.dark-theme .leaflet-container {
+  background: #0f172a;
+}
